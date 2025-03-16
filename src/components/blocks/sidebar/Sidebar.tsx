@@ -1,14 +1,15 @@
-"use client"; // Pastikan ini ada di baris pertama
+"use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // Pakai usePathname
+import { usePathname } from "next/navigation";
 import Styles from "../sidebar/sidebar.module.css";
 import {
   ChartNoAxesColumn,
   ExternalLink,
   Layers2,
   LogOut,
+  Menu,
   MessageSquareMore,
   Settings,
   StickyNote,
@@ -16,11 +17,21 @@ import {
 } from "lucide-react";
 
 export default function Sidebar() {
-  const pathname = usePathname(); // Ambil path halaman saat ini
+  const pathname = usePathname();
+  const [isActive, setIsActive] = useState(false);
+
+  // Fungsi untuk toggle sidebar
+  const toggleSidebar = () => {
+    setIsActive(!isActive);
+  };
 
   return (
-    <aside className={Styles.aside}>
+    <aside className={`${Styles.aside} ${isActive ? Styles.active : ""}`}>
       <div>
+        {/* Tambahkan onClick untuk toggle */}
+        <div className={Styles.menu} onClick={toggleSidebar}>
+          <Menu width={24}/>
+        </div>
         <ul>
           <Link href="/dashboard">
             <li className={pathname === "/dashboard" ? Styles.menuActive : ""}>
@@ -84,8 +95,6 @@ export default function Sidebar() {
           </Link>
           <Link href="/">
             <li>
-              {" "}
-              {/* Tidak pakai class menuActive */}
               <div>
                 <LogOut size={20} />
               </div>

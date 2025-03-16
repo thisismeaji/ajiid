@@ -1,4 +1,4 @@
-.aside{
+.aside {
     background-color: var(--secondary);
     display: flex;
     flex-direction: column;
@@ -15,67 +15,71 @@
     margin: 2rem 0 2rem 2rem;
 }
 
-.aside > div{
+.aside > div {
     width: 100%;
 }
 
-.aside:hover{
+.menu {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.aside.active {
     width: 15rem;
     min-width: 15rem;
 }
 
-.menuActive{
-    background-color: var(--foreground);
-    color: var(--background);
-}
-
-.aside ul{
+.aside ul {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     width: 100%;
 }
 
-.aside ul li{
+.aside ul li {
     border-radius: 5px;
     padding: 0.5rem 0.9rem;
-    overflow-x:hidden;
-    width: 3rem;
+    overflow-x: hidden;
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 1.5rem;
     transition: all 0.3s ease-in-out;
 }
 
-.aside ul li:hover{
+.menuActive {
     background-color: var(--foreground);
     color: var(--background);
 }
 
-.aside ul li div{
+.aside ul li:hover {
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+.aside ul li div {
     display: flex;
     align-items: center;
 }
 
-.aside ul li span{
+.aside ul li span {
     opacity: 0;
     transition: all 0.3s ease-in-out;
     font-size: 0.9em;
 }
 
-.aside:hover ul li{
-    width: 100%;
-}
-
-.aside:hover ul li span{
+.aside.active ul li span {
     opacity: 1;
 }
 
-@media screen and (max-width:786px) {
-    .aside{
-       margin: 1rem 0 1rem 1rem;
+@media screen and (max-width: 786px) {
+    .aside {
+        margin: 0.5rem 0 0.5rem 0.5rem;
     }
-
 }
 
-
+@media screen and (min-width:786px) and (max-width:1200px) {
+    .aside {
+        margin: 1rem 0 1rem 1rem;
+    }
+}
