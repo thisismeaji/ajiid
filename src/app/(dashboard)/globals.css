@@ -1,0 +1,67 @@
+:root {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --secondary: #18181b;
+  --grey: #52525b;
+  --light-grey:#e4e4e7;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+    background-color: var(--background);
+    color: var(--foreground);
+    position: relative;
+    overflow: hidden;
+}
+
+main{
+    display: flex;
+    height: 100vh;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+p,
+li,
+a {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Ubah warna bar utama menjadi putih */
+#nprogress .bar {
+  background: #ffffff !important;
+}
+
+/* Hapus efek gradasi biru di ujung bar */
+#nprogress .peg {
+  box-shadow: 0 0 10px #ffffff, 0 0 5px #ffffff !important;
+}
+
+/* Matikan warna spinner (jika aktif) */
+#nprogress .spinner-icon {
+  border-top-color: #ffffff !important;
+  border-left-color: #ffffff !important;
+}
+
+/* Jika masih ada warna biru, hapus seluruh spinner */
+#nprogress .spinner {
+  display: none !important;
+}
+
+
+

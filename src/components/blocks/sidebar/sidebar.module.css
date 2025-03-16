@@ -1,0 +1,81 @@
+.aside{
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0.5rem;
+    width: 4rem;
+    min-width: 4rem;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+    margin: 2rem 0 2rem 2rem;
+}
+
+.aside > div{
+    width: 100%;
+}
+
+.aside:hover{
+    width: 15rem;
+    min-width: 15rem;
+}
+
+.menuActive{
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+.aside ul{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.aside ul li{
+    border-radius: 5px;
+    padding: 0.5rem 0.9rem;
+    overflow-x:hidden;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.aside ul li:hover{
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+.aside ul li div{
+    display: flex;
+    align-items: center;
+}
+
+.aside ul li span{
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.9em;
+}
+
+.aside:hover ul li{
+    width: 100%;
+}
+
+.aside:hover ul li span{
+    opacity: 1;
+}
+
+@media screen and (max-width:786px) {
+    .aside{
+       margin: 1rem 0 1rem 1rem;
+    }
+
+}
+
+
