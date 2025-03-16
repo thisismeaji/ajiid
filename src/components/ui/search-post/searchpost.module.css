@@ -1,0 +1,27 @@
+.search input{
+    width: 15rem;
+    padding: 0.4rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--secondary);
+    background-color: transparent;
+    color: var(--accent);
+}
+
+.search input:focus{
+    outline: none;
+}
+
+.search button{
+    border: 1px solid var(--secondary);
+    background-color: var(--primary);
+    color: var(--accent);
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.search button:hover{
+    background-color: var(--accent);
+    color: var(--primary);
+}

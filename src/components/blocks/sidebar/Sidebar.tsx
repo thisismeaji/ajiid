@@ -20,7 +20,6 @@ export default function Sidebar() {
   const pathname = usePathname();
   const [isActive, setIsActive] = useState(false);
 
-  // Fungsi untuk toggle sidebar
   const toggleSidebar = () => {
     setIsActive(!isActive);
   };
@@ -28,7 +27,6 @@ export default function Sidebar() {
   return (
     <aside className={`${Styles.aside} ${isActive ? Styles.active : ""}`}>
       <div>
-        {/* Tambahkan onClick untuk toggle */}
         <div className={Styles.menu} onClick={toggleSidebar}>
           <Menu width={24}/>
         </div>

@@ -1,9 +1,7 @@
 :root {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --secondary: #18181b;
-  --grey: #52525b;
-  --light-grey:#e4e4e7;
+  --primary: #FFFFFF;
+  --secondary: #f4f4f5;
+  --accent: #18181B;
 }
 
 * {
@@ -13,8 +11,8 @@
 }
 
 body{
-    background-color: var(--background);
-    color: var(--foreground);
+    background-color: var(--primary);
+    color: var(--accent);
     position: relative;
     overflow: hidden;
 }
@@ -44,18 +42,18 @@ a {
 
 /* Ubah warna bar utama menjadi putih */
 #nprogress .bar {
-  background: #ffffff !important;
+  background: var(--accent) !important;
 }
 
 /* Hapus efek gradasi biru di ujung bar */
 #nprogress .peg {
-  box-shadow: 0 0 10px #ffffff, 0 0 5px #ffffff !important;
+  box-shadow: 0 0 10px var(--accent), 0 0 5px var(--accent) !important;
 }
 
 /* Matikan warna spinner (jika aktif) */
 #nprogress .spinner-icon {
-  border-top-color: #ffffff !important;
-  border-left-color: #ffffff !important;
+  border-top-color: var(--accent) !important;
+  border-left-color: var(--accent) !important;
 }
 
 /* Jika masih ada warna biru, hapus seluruh spinner */
