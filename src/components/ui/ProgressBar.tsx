@@ -1,28 +1,30 @@
 "use client";
 
-import { useEffect, useTransition } from "react";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
+// Konfigurasi NProgress
 NProgress.configure({
-  showSpinner: false, // Hilangkan spinner
-  trickleSpeed: 200,  // Kecepatan animasi progress
-  minimum: 0.1,       // Progress minimal sebelum selesai
+  showSpinner: false,
+  trickleSpeed: 200,
+  minimum: 0.1,
 });
 
 export default function ProgressBar() {
-  const pathname = usePathname();
-  const [, startTransition] = useTransition();
+  const pathname = usePathname(); // Mendapatkan pathname halaman aktif
 
   useEffect(() => {
-    NProgress.start(); // Mulai progress bar
+    NProgress.start(); // Memulai progress bar saat rute berubah
 
-    startTransition(() => {
-      NProgress.done(); // Selesai saat transisi selesai
-    });
+    const handleComplete = () => {
+      NProgress.done(); // Menghentikan progress bar saat selesai memuat halaman
+    };
 
-  }, [pathname]);
+    handleComplete(); // Jalankan handleComplete setelah perubahan rute selesai
+
+  }, [pathname]); // Gunakan pathname sebagai dependensi
 
   return null;
 }

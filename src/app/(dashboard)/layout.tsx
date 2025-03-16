@@ -5,9 +5,9 @@ import ProgressBar from "@/components/ui/ProgressBar";
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['200', '300', '400', '500', '600', '700'], // Semua weight dari 200 hingga 700
-  variable: '--font-poppins', // Menggunakan CSS Variable
-})
+  weight: ['200', '300', '400', '500', '600', '700'],
+  variable: '--font-poppins',
+});
 
 export default function DashboardLayout({
   children,
@@ -18,9 +18,9 @@ export default function DashboardLayout({
     <html lang="en" className={poppins.className}>
       <body>
         <main>
-          <ProgressBar/>
-        <Sidebar/>
-        {children}
+          <ProgressBar />
+          <Sidebar />
+          {children}
         </main>
       </body>
     </html>
