@@ -13,7 +13,7 @@ NProgress.configure({
 
 export default function ProgressBar() {
   const pathname = usePathname();
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
 
   useEffect(() => {
     NProgress.start(); // Mulai progress bar
